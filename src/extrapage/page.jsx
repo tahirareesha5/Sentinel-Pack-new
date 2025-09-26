@@ -3,7 +3,7 @@ import Header from "../components/home/Header";
 import Productbg from "../components/product/Productbg";
 import Banner from "../components/home/Banner";
 import Footer from "../components/home/Footer";
-import Categories from "../components/extrapage/categories";
+import Categories from "../components/extrapage/Categories";
 
 function Extrapage() {
   return (
