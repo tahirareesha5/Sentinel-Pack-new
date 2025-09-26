@@ -10,7 +10,6 @@ function Extrapage() {
     <>
       <Header />
       <Productbg />
-      {/* <Categories /> */}
       <Categories />
       <Banner />
       <Footer />

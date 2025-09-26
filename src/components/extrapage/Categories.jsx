@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-function Categories() {
+const Categories = () => {
   const categories = [
     { value: "all", label: "All Products" },
     { value: "colostomy", label: "One-piece Colostomy Bag" },
@@ -14,18 +13,126 @@ function Categories() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const products = [
-    { id: 1, name: "Vulval", pack: "Pack", image: "home-pro1.png", rating: 4.7, reviews: 23, ref: "REF CHK-001", desc: "Description for Vulval." },
-    { id: 2, name: "Colostomy", pack: "Box of 10", image: "home-pro2.png", rating: 4.5, reviews: 12, ref: "REF COL-123", desc: "Description for Colostomy." },
-    { id: 3, name: "Ostomy", pack: "Single", image: "home-pro7.png", rating: 4.8, reviews: 31, ref: "REF OST-456", desc: "Description for Ostomy." },
-    { id: 4, name: "Skin Barrier", pack: "Set of 5", image: "home-pro2.png", rating: 4.6, reviews: 19, ref: "REF SKN-786", desc: "Description for Skin Barrier." },
-    { id: 5, name: "Excel", pack: "Set of 5", image: "home-pro3.png", rating: 4.6, reviews: 19, ref: "REF SKN-789", desc: "Description for Excel." },
-    { id: 6, name: "Bright", pack: "Set of 5", image: "home-pro4.png", rating: 4.6, reviews: 19, ref: "REF SKN-783", desc: "Description for Bright." },
-    { id: 7, name: "Fresh", pack: "Set of 5", image: "home-pro5.png", rating: 4.6, reviews: 19, ref: "REF SKN-782", desc: "Description for Fresh." },
-    { id: 8, name: "Tablet", pack: "Set of 5", image: "home-pro6.png", rating: 4.6, reviews: 19, ref: "REF SKN-781", desc: "Description for Tablet." },
-    { id: 9, name: "Ulcer", pack: "Set of 5", image: "home-pro7.png", rating: 4.6, reviews: 19, ref: "REF SKN-780", desc: "Description for Ulcer." },
-    { id: 10, name: "Headache", pack: "Set of 5", image: "home-pro8.png", rating: 4.6, reviews: 19, ref: "REF SKN-782", desc: "Description for Headache." },
-    { id: 11, name: "Skin", pack: "Set of 5", image: "home-pro9.png", rating: 4.6, reviews: 19, ref: "REF SKN-788", desc: "Description for Skin." },
-    { id: 12, name: "Pain", pack: "Set of 5", image: "home-pro10.png", rating: 4.6, reviews: 19, ref: "REF SKN-754", desc: "Description for Pain." },
+    {
+      id: 1,
+      name: "Vulval",
+      pack: "Pack",
+      image: "home-pro1.png",
+      rating: 4.7,
+      reviews: 23,
+      ref: "REF CHK-001",
+      desc: "Description for Vulval.",
+    },
+    {
+      id: 2,
+      name: "Colostomy",
+      pack: "Box of 10",
+      image: "home-pro2.png",
+      rating: 4.5,
+      reviews: 12,
+      ref: "REF COL-123",
+      desc: "Description for Colostomy.",
+    },
+    {
+      id: 3,
+      name: "Ostomy",
+      pack: "Single",
+      image: "home-pro7.png",
+      rating: 4.8,
+      reviews: 31,
+      ref: "REF OST-456",
+      desc: "Description for Ostomy.",
+    },
+    {
+      id: 4,
+      name: "Skin Barrier",
+      pack: "Set of 5",
+      image: "home-pro2.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-786",
+      desc: "Description for Skin Barrier.",
+    },
+    {
+      id: 5,
+      name: "Excel",
+      pack: "Set of 5",
+      image: "home-pro3.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-789",
+      desc: "Description for Excel.",
+    },
+    {
+      id: 6,
+      name: "Bright",
+      pack: "Set of 5",
+      image: "home-pro4.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-783",
+      desc: "Description for Bright.",
+    },
+    {
+      id: 7,
+      name: "Fresh",
+      pack: "Set of 5",
+      image: "home-pro5.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-782",
+      desc: "Description for Fresh.",
+    },
+    {
+      id: 8,
+      name: "Tablet",
+      pack: "Set of 5",
+      image: "home-pro6.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-781",
+      desc: "Description for Tablet.",
+    },
+    {
+      id: 9,
+      name: "Ulcer",
+      pack: "Set of 5",
+      image: "home-pro7.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-780",
+      desc: "Description for Ulcer.",
+    },
+    {
+      id: 10,
+      name: "Headache",
+      pack: "Set of 5",
+      image: "home-pro8.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-782",
+      desc: "Description for Headache.",
+    },
+    {
+      id: 11,
+      name: "Skin",
+      pack: "Set of 5",
+      image: "home-pro9.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-788",
+      desc: "Description for Skin.",
+    },
+    {
+      id: 12,
+      name: "Pain",
+      pack: "Set of 5",
+      image: "home-pro10.png",
+      rating: 4.6,
+      reviews: 19,
+      ref: "REF SKN-754",
+      desc: "Description for Pain.",
+    },
   ];
   // Filter categories search (keeps your original behavior)
   const filtered = categories.filter((cat) =>
@@ -56,17 +163,25 @@ function Categories() {
             }
             className="flex items-center justify-between px-5 py-6 cursor-pointer select-none border-b border-gray-200"
           >
-            <h3 className="text-2xl font-semibold tracking-tight">Categories</h3>
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Categories
+            </h3>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className={`w-6 h-6 text-gray-600 transform transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+              className={`w-6 h-6 text-gray-600 transform transition-transform duration-200 ${
+                open ? "rotate-180" : ""
+              }`}
               aria-hidden="true"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 9l6 6 6-6"
+              />
             </svg>
           </div>
           {open && (
@@ -80,13 +195,16 @@ function Categories() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && setSelected(cat.value)
+                      (e.key === "Enter" || e.key === " ") &&
+                      setSelected(cat.value)
                     }
                     aria-pressed={selected === cat.value}
                   >
                     <div
                       className={`w-5 h-5 flex items-center justify-center rounded-full border-2 ${
-                        selected === cat.value ? "border-emerald-600 bg-emerald-600" : "border-gray-300 bg-white"
+                        selected === cat.value
+                          ? "border-emerald-600 bg-emerald-600"
+                          : "border-gray-300 bg-white"
                       }`}
                       aria-hidden="true"
                     >
@@ -94,7 +212,9 @@ function Categories() {
                         <div className="w-2 h-2 rounded-full bg-white"></div>
                       )}
                     </div>
-                    <span className="text-[15px] text-gray-700">{cat.label}</span>
+                    <span className="text-[15px] text-gray-700">
+                      {cat.label}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -110,7 +230,11 @@ function Categories() {
                 className="flex flex-col shadow-md w-full max-w-[250px] py-3 px-4 bg-white rounded-md"
               >
                 <div>
-                  <img src={p.image} alt={p.name} className="w-full h-auto object-contain" />
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
                 <div className="font-medium text-sm py-2 leading-tight text-left">
                   <p>{p.name}</p>
@@ -145,5 +269,6 @@ function Categories() {
       </div>
     </div>
   );
-}
+};
+
 export default Categories;
