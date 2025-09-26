@@ -1,5 +1,5 @@
 import React from "react";
-import CardRelated from "./Cardrelated";
+import CardRelated from "./CardRelated";
 
 function Related() {
   const relatedProducts = [
